@@ -1,0 +1,637 @@
+* {
+  box-sizing: border-box;
+}
+
+/*Header*/
+header {
+  display: flex;
+  justify-content: start;
+ align-items: center;
+ height: 90px;
+  
+  display: inline-block;
+  width: 100%;
+  position: fixed;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
+  background: #000000;
+
+}
+
+body {
+
+  margin: 0px;
+}
+.container_menu{
+  
+  display: flex;
+  align-items: center;
+  display: inline-block;
+}
+
+h1 a {
+ 
+  text-decoration: none;
+  margin-right: 100px;
+  color: white;
+  font-size: 33px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-left: 0px;
+  animation-name: VidaSazónTitulo;
+  animation-duration: 5s;
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+  position: relative;
+  animation-timing-function: unset;
+}
+
+
+
+/*Menu*/
+.container_menu {
+  
+  width: 100%;
+ 
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  padding: 0px 20px;
+}
+
+.menu {
+  
+  display: flex;
+  display: flex;
+  justify-content: start;
+  height: 90px;
+  max-width: 1200px;
+  
+ 
+}
+
+nav {
+ 
+ width: 100%;
+  
+  display: flex;
+  
+  align-items: center;
+
+}
+
+nav>ul {
+ 
+  height: 100%;
+  display: flex;
+
+
+
+}
+
+nav>ul>li {
+
+  position: relative;
+  margin-right: 30px;
+  height: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+
+}
+
+nav>ul>li>a {
+
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(194, 194, 194);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding-bottom: 0px;
+
+
+}
+
+
+.cursor_menu {
+  cursor: context-menu;
+
+}
+
+nav>ul>li>a:hover {
+
+  color: rgb(255, 255, 255);
+  transform: scale(1.125);
+
+  transition: ease 0.3s;
+
+
+}
+
+
+.box_bottom {
+  background: rgb(255, 247, 1);
+  color: rgb(7, 128, 234);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  top: 5px;
+  right: 46px;
+  z-index: 1;
+  position: relative;
+
+
+  margin-right: 30px;
+  padding-right: 0px;
+
+  width: 46px;
+  height: 2px;
+
+
+
+
+}
+
+.box_bottom:hover {
+  transform: scaleX(4);
+  transition: ease-in-out 0.4s;
+}
+
+
+
+/* SUB MENU */
+nav ul li ul {
+  list-style: none;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(0, 0, 0, 0.7), rgb(61, 61, 61, 0.5));
+
+
+  position: absolute;
+  margin-top: 23px;
+  top: 90px;
+  left: -5px;
+  padding: 14px 0px;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0, 5);
+  transition: all 0.3s;
+
+}
+
+nav ul li:hover ul {
+  animation-name: dropdown1;
+  visibility: visible;
+  opacity: 1;
+  top: 66px;
+  animation-duration: 0.4s;
+}
+
+@keyframes dropdown1 {
+  from {
+    top: 40px;
+    opacity: 0;
+  }
+
+  to {
+    top: 66px;
+    opacity: 1;
+  }
+}
+
+
+nav ul li ul:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid rgba(181, 144, 90, 0.763);
+  position: absolute;
+  top: -12px;
+  left: 10px
+}
+
+nav ul li ul li a {
+
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  font-weight: 200;
+  display: block;
+  color: rgb(255, 255, 255);
+  margin-left: 6px;
+  margin-left: 14px;
+  margin-top: 10px;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+
+}
+
+nav ul li ul li a:hover {
+  background: rgb(132, 132, 132);
+  margin-right: 9px;
+  padding-left: 10px;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0, 5);
+
+
+}
+
+#selected {
+  color: rgb(255, 255, 255);
+  transform: scale(1.125);
+
+}
+
+#check_menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+/* ELEMENTOS RESPONSIVOS ... Media/screen */
+@media screen and (max-width: 720px) {
+  h1 a {
+    font-size: 25px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: right;
+  }
+
+
+  nav>ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 20px;
+    background: linear-gradient(rgb(0, 0, 0), rgb(26, 26, 26));
+    box-shadow: rgb(26, 26, 26) 0px 20px 10px 10px;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 74px;
+    /*158*/
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    
+  }
+
+
+
+  nav>ul>li>a:hover {
+    transform: scale(1);
+  }
+
+  nav ul li ul {
+    left: 90px;
+  }
+
+  nav>ul>li:hover ul {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    top: 21px;
+  }
+
+  #icon_bars_show {
+    width: 100%;
+   padding-right: 40px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 25px;
+    
+    color: white;
+    cursor: pointer;
+    height: 32%;
+  
+    position: relative;
+    z-index: 1;
+    position: absolute;
+
+  }
+
+
+
+  #icon_bars_show-out {
+    width: 100%;
+    padding-right: 44px;
+     display: flex;
+     justify-content: right;
+     align-items: center;
+     margin-top: 34px;
+    font-size: 20px;
+    color: rgb(248, 247, 244);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+
+    display: flex;
+    
+    z-index: 2;
+    position: absolute;
+
+  }
+
+
+  #check_menu {
+
+    position: relative;
+    display: none;
+
+  }
+  header h1{
+    z-index: 1;
+  }
+  #label_check {
+
+    width: 25px;
+    height: 100%;
+    display: none;
+    z-index: 1;
+  }
+
+  #label_check {
+    display: block;
+  }
+
+  .icon_bars_show {
+    display: flex;
+  }
+
+  #check_menu:checked~nav>ul {
+    height: 300px;
+    visibility: visible;
+    opacity: 1;
+
+
+  }
+
+  /*input[type="checkbox"]:checked~.icon_bars_show{
+    background: yellow;
+    opacity: 1;
+    visibility: visible;
+  }
+  */
+  #check_menu:checked+label #icon_bars_show {
+    display: none;
+    background: #8d0a0a;
+
+  }
+
+  #check_menu:checked+label #icon_bars_show-out {
+    visibility: visible;
+    opacity: 1;
+
+
+
+  }
+
+  nav ul li ul:before {
+
+    visibility: hidden;
+    opacity: 0;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid rgb(77, 206, 45);
+    position: absolute;
+    top: 0px;
+    left: 0px
+  }
+
+
+  .icon-arrow-li {
+    
+    color: rgb(124, 124, 124);
+    font-size: 12px;
+    width: 12px;
+    margin-left: 6px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+
+  }
+
+
+
+  nav>ul>li>ul {
+
+    display: none;
+    list-style: none;
+
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0px;
+    background-color: transparent;
+
+
+
+
+    padding: 0px 0px;
+    top: 21px;
+    left: -67px;
+    padding: 0px;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0, 5);
+    transition: all 0.3s;
+    margin-bottom: 80px;
+
+
+  }
+
+  nav ul li ul li a {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    color: rgb(132, 132, 132);
+    padding: 0px;
+    margin-left: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 12px;
+
+    transition: all 0.3s ease;
+
+  }
+
+  .menu ul .activo {
+
+
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: margin-top 0.3s ease;
+    animation-name: dropdown2;
+ 
+    animation-duration: 0.4s;
+
+  }
+
+  nav>ul>li .www {
+    background: #8d0a0a;
+  }
+
+
+  nav>ul>li:hover>ul {
+
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+
+  }
+
+  /* */
+  nav>ul>li>ul {
+    margin-bottom: 0px;
+  }
+
+  /* */
+
+  .ayuda_li_a_position {
+    transition: margin-top 0.3s ease;
+    background: #2b2b2b;
+  }
+
+
+
+
+  nav>ul>li {
+    margin-bottom: 50px;
+
+  }
+
+  .marg_left {
+    margin-left: 20px;
+  }
+
+  nav>ul>li>ul {
+    list-style: none;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+
+    transition: all 0.3s;
+
+  }
+
+  nav>ul>li>ul>li>a {
+
+    padding: auto;
+    background-color: transparent;
+    text-align: center;
+    background-color: transparent;
+
+  }
+
+  nav ul li ul li a {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul li ul {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('imagen-transparente.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+
+
+
+  }
+
+  nav ul li ul li a:hover {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+    padding-left: 0px;
+    color: white;
+    transform: scale(1.1);
+  }
+
+  #selected {
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+  }
+
+  nav>ul>li:hover>a {
+    color: rgb(255, 255, 255);
+    transition: all 0.3 ease;
+    transform: scale(1.1);
+  }
+
+  nav>ul>li:hover>a+i {
+    color: rgb(255, 255, 255);
+    transition: all 0.3 ease;
+    transform: scale(1.1);
+  }
+
+  
+
+
+  @keyframes dropdown2 {
+    from {
+      top: 0px;
+      opacity: 0;
+    }
+  
+    to {
+      top: 21px;
+      opacity: 1;
+    }
+  }
+
+
+  /* vea 
+  nav ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+  }
+   */
+
+}

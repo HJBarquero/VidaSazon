@@ -1,0 +1,422 @@
+* {
+    Box-sizing: "Border-Box";
+}
+
+.titulo {
+    margin-right: 25px;
+    color: white;
+    font-size: 33px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-left: 25px;
+    animation-name: VidaSazónTitulo;
+    animation-duration: 5s;
+    animation-delay: 0.6s;
+    animation-iteration-count: infinite;
+    position: relative;
+    animation-timing-function: unset;
+
+
+}
+
+
+@keyframes VidaSazónTitulo {
+    20% {
+        color: yellow;
+        top: 0px;
+        left: 0px;
+    }
+
+    40% {
+        color: rgb(0, 255, 0);
+        top: 0px;
+        left: 20px
+    }
+
+    60% {
+        color: blue;
+        top: 20px;
+        left: 20px;
+    }
+
+    80% {
+        color: rgb(241, 0, 0);
+        top: 20px;
+        left: 0px
+    }
+
+    100% {
+        color: white;
+        top: 0px;
+        left: 0px
+    }
+}
+
+
+
+
+
+.displayinline-block {
+
+    display:inline-block;
+    font-display: flex;
+    align-items: center;
+   /* position: absolute; */
+
+    justify-content: center;
+   
+    top: 100%;
+    left: 0;
+    background-color: #0e0e0e;
+    padding: 10px;
+    display: inline-block;
+    
+}
+
+.NavStyle1 {
+    
+    background: red;
+
+   
+    
+}
+.NavStyle1:hover{
+    background: rgb(255, 196, 0);
+
+}
+
+
+header {
+    margin-top: 0px;
+    padding-top: 0px;
+    background: rgb(9, 9, 9);
+    height: 67px;
+    display: flex;
+
+    justify-content: left;
+    align-items: center;
+   
+
+}
+
+header a {
+    text-decoration: none;
+}
+
+.NavBoxesMargin {
+    margin-right: 12px;
+}
+
+
+.NavPrincipalesElementos ul li a{
+    display: inline-block;
+    cursor:context-menu;
+    text-decoration: none;
+    height: 100%;
+    margin-left: 2px ;
+    
+   
+    padding: 3px;
+    color: rgb(201, 201, 201);
+    border-bottom: 2px solid rgb(255, 233, 109);
+    border-radius: 3px 3px 0px 00px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    animation-name: liAnimation;
+    animation-name: liAnimation2;
+    animation-iteration-count: infinite;
+
+
+}
+
+
+
+
+
+
+.NavBoxes:hover {
+    color: rgb(255, 255, 255);
+    transition-duration: 0.2s;
+    border-bottom: 2px solid rgb(255, 187, 0)
+}
+
+.LiMenu {
+    color: white;
+    margin-left: 200PX;
+}
+
+.NavPrincipalesElementos {
+    width: 100%;
+
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    transition: transform 0.4s;
+    
+
+}
+
+.NavElementos {
+    
+
+    list-style: none;
+    position: relative;
+    height: 100%;
+
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(64%);
+}
+
+.SubNavElementos {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    opacity: 50%;
+    padding: 10px;
+    display: block;
+    clip-path: let(--clip);
+}
+
+.IconArrow {
+    margin-bottom: 4px;
+    border-bottom: none;
+    font-size: 13px;
+    color: rgb(255, 0, 0);
+    margin-left: 5px;  
+    
+   
+
+}
+
+
+
+
+
+.BUT {
+    background: none;
+    color: brown;
+}
+
+
+.NavElementos:hover {
+    color: aliceblue;
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   
+}
+
+.LiEelementosSecundarios {
+
+    color: rgb(167, 149, 109);
+}
+
+/* ANIMACION HOVER AMARILLO PARPADEANTE:
+
+@keyframes liAnimation {
+    50% {
+        background: rgb(255, 183, 0);
+        color: black;
+    }
+
+    100% {
+        background: none;
+        color: rgb(255, 255, 255);
+    }
+}
+
+nav ul li:hover {
+    animation-timing-function: ease;
+    animation-name:liAnimation;
+    animation-delay: 0.1s;
+    animation-duration: 2.5s;
+}
+
+*/
+
+
+
+.textosa1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.textob1 {
+    font-size: 40px;
+}
+
+.textob2 {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+}
+
+.textoa2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: 700;
+}
+
+.textoa3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+body {
+    margin: 0;
+    background: rgb(255, 255, 255);
+}
+
+
+
+
+
+img {
+    width: 160px
+}
+
+.backgroundgray {
+    background: rgb(56, 53, 43);
+    color: aliceblue;
+    background-position-x: 20px;
+}
+
+.section {
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+section {
+    background: white;
+    padding: 10px;
+    margin-left: 5px;
+    width: 500px;
+
+    float: left;
+}
+
+article div {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+article time {
+    color: rgb(0, 0, 170);
+    font-weight: 900px;
+}
+
+.liaside {
+    list-style: square;
+    color: rgb(255, 250, 190);
+    margin-bottom: 10px;
+}
+
+.white {
+    color: rgb(255, 255, 255);
+}
+
+.backwhite {
+    background: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size-adjust: initial;
+    font-size: 25px;
+}
+
+#BLOCK {
+    color: white;
+    background: red;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.backblue {
+    background: rgb(206, 206, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.ALIGNcenter {
+    text-align: center;
+}
+
+.MARGcentroIZQ {
+    display: inline-block;
+    width: 1085px;
+    text-align: center;
+}
+
+.ALIGNleft {
+    text-align: left;
+}
+
+.asidetittlecolum {
+    color: azure;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    list-style: disc;
+}
+
+
+
+.asidelinks li {
+    list-style: square;
+    border: 4px solid rgb(106, 20, 146);
+    font-family: monospace;
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 5px;
+    margin-top: 15px;
+    margin-right: 130px;
+}
+
+aside {
+    border: 2px solid white;
+    text-align: left;
+}
+
+.asidecolor1 {
+    color: rgb(255, 255, 255);
+}
+
+.asidecolor2 {
+    color: rgb(255, 246, 234)
+}
+
+.asidecolumn {
+    width: 327px;
+    border: SOLID 4px orange;
+    background: rgb(0, 0, 0);
+    margin: 0px 0;
+    float: left;
+    text-align: left;
+    margin-right: 8px;
+    padding-bottom: 340px;
+}
+
+
+.pie {
+    clear: both;
+}
+
+.footer {
+    padding: 10px 0px;
+}
+
+.footertext1 {
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    background: rgb(0, 94, 200);
+    text-transform: uppercase
+}
+
+.maximo-resolucion{
+    opacity: none;
+    font-size: 2px;
+}
