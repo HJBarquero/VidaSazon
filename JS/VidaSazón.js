@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   menuLinks.forEach(menuLink => {
     const subMenu = menuLink.parentElement.querySelector('ul'); // Encuentra el submenú específico para cada enlace
 
-    //Visible
+    //Visible`1
     menuLink.addEventListener('mouseenter', function () {
       subMenu.style.visibility = 'visible';
       subMenu.style.opacity = 1;
@@ -18,11 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
       menuLink.style.color = 'red';
     });
    
-    subMenu.addEventListener('mouseenter', function () {
-      subMenu.style.visibility = 'visible';
-      subMenu.style.opacity = 1;
-    });
-    
+   
+
   });
 
  
