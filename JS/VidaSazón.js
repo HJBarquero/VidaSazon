@@ -1,26 +1,44 @@
 //------------------------------ Dropdown menu ------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  const menuLinks = document.querySelectorAll('nav ul li a'); // Selecciona todos los elementos nav ul li a
+  const menuLinks = document.querySelectorAll('nav ul li a'); // Selected elements
 
   menuLinks.forEach(menuLink => {
-    const subMenu = menuLink.parentElement.querySelector('ul'); // Encuentra el submenú específico para cada enlace
+    const subMenu = menuLink.parentElement.querySelector('ul'); // subMenu 'ul'
 
-    //Visible`1
+   
+
+    //Visible
     menuLink.addEventListener('mouseenter', function () {
       subMenu.style.visibility = 'visible';
       subMenu.style.opacity = 1;
-      menuLink.style.color = 'green';
+     
     });
+
     //Hiden
     menuLink.addEventListener('mouseleave', function () {
       subMenu.style.visibility = 'hidden';
       subMenu.style.opacity = 0;
-      menuLink.style.color = 'red';
+     
+
+      //Visible subMenu :Hover
+      subMenu.addEventListener('mouseenter', function () {
+        subMenu.style.visibility = 'visible';
+        subMenu.style.opacity = 1;
+
+         //Hiden subMenu :Hover
+        subMenu.addEventListener('mouseleave', function () {
+          subMenu.style.visibility = 'hidden';
+          subMenu.style.opacity = 0;
+        });
+        
+      });
+      
     });
    
-   sssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+  
 
   });
+
 
  
 });
