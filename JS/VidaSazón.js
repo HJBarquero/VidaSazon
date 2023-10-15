@@ -1,66 +1,96 @@
+
+//------------------------------ Functions Dropdown menu/Mobile ------------------------------
+  
+
+   //Add event 'resize'
+   window.addEventListener('resize', function () {
+    handleMenuEvents();
+    handleMenuEventsMobile();
+  });
+  
+  //Execute funtcion while the page is reloaded
+  window.addEventListener('DOMContentLoaded', function () {
+    handleMenuEvents();
+    handleMenuEventsMobile();
+  });
+
+
 //------------------------------ Dropdown menu ------------------------------
-document.addEventListener('DOMContentLoaded', function () {
-  const menuLinks = document.querySelectorAll('nav ul li a'); // Selected elements
-  const menuLinksAfter = document.querySelectorAll('nav> ul > li > a::after');
+function handleMenuEvents() {
+  if (window.innerWidth > 720) {
+    
+    
+    const menuLinks = document.querySelectorAll('nav ul li a');
+    const menuLinksAfter = document.querySelectorAll('nav> ul > li > a::after');
 
-  menuLinks.forEach((menuLink, index) => {
+    menuLinks.forEach((menuLink) => {
+      const subMenu = menuLink.parentElement.querySelector('ul');
+      const barsElement = document.querySelector('.animation_Bars::after');
 
-
-    const subMenu = menuLink.parentElement.querySelector('ul'); // subMenu 'ul'
-    const barsElement = document.querySelector('.animation_Bars::after');
-
-
-    //Visible
-    menuLink.addEventListener('mouseenter', function () {
-      subMenu.style.visibility = 'visible';
-      subMenu.style.opacity = 1;
-      menuLink.style.color = 'rgb(255, 255, 255)'
-      ;
-
-
-    });
-
-    //Hiden
-    menuLink.addEventListener('mouseleave', function () {
-      subMenu.style.visibility = 'hidden';
-      subMenu.style.opacity = 0;
-      menuLink.style.color ='rgb(188, 188, 188)';
-     
-
-      //Visible subMenu :Hover
-      subMenu.addEventListener('mouseenter', function () {
+      //Visible
+      menuLink.addEventListener('mouseenter', function () {
         subMenu.style.visibility = 'visible';
         subMenu.style.opacity = 1;
-        menuLink.style.color = 'rgb(255, 255, 255)'
-      
+        menuLink.style.color = 'rgb(255, 255, 255)';
         
+      });
 
+      //Hidden
+      menuLink.addEventListener('mouseleave', function () {
+        subMenu.style.visibility = 'hidden';
+        subMenu.style.opacity = 0;
+        menuLink.style.color = 'rgb(188, 188, 188)';
 
+        //Visible subMenu :Hover
+        subMenu.addEventListener('mouseenter', function () {
+          subMenu.style.visibility = 'visible';
+          subMenu.style.opacity = 1;
+          menuLink.style.color = 'rgb(255, 255, 255)';
+        });
 
-        //Hiden subMenu :Hover
+        //Hidden subMenu :Hover
         subMenu.addEventListener('mouseleave', function () {
           subMenu.style.visibility = 'hidden';
           subMenu.style.opacity = 0;
-          menuLink.style.color ='rgb(188, 188, 188)';
+          menuLink.style.color = 'rgb(188, 188, 188)';
+        });
+      });
+    });
+    
+  } else {
 
+  }
+}
+
+
+  //------------------------------Dropdown menu MOBILE------------------------------ 
+
+function handleMenuEventsMobile() {
+
+    if (window.innerWidth < 720) {
+      var menu = document.querySelectorAll('.menu_toggle');
+      
+
+      menu.forEach(function (item) {
+        item.addEventListener('click', function (i) {
+          var elemento = i.target.parentNode;
+          console.log(elemento.children);
+          elemento.children[2].classList.toggle('activo');
+          
          
 
-          
+      
         });
- 
-    
+      
       });
+  
+    } else {
+     
+    }
+  }
 
-
-    });
-
-
-
-  })
-});
-
-
-
+  
+  
 
 
 
@@ -71,30 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-//------------------------------Dropdown menu MEDIA------------------------------ 
-
-var menu = document.querySelectorAll('.menu_toggle');
-var marginToggle = document.querySelectorAll('.margin_Toggle');
-var menuPosition = document.querySelectorAll('.ayuda_li_a_position');
-var tglWhite = document.querySelectorAll('.tgl_white');
-
-menu.forEach(function (item) {
-  item.addEventListener('click', function (i) {
-    var elemento = i.target.parentNode;
-    console.log(elemento.children);
-    elemento.children[2].classList.toggle('activo');
-    iconArrow.classList.add('.clicked');
-
-
-
-
-  })
-
-
-
-})
 
 
 
