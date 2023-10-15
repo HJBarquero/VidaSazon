@@ -114,7 +114,7 @@ nav>ul>li {
   padding-top: 50px;
   padding-bottom: 50px;
   
-   
+
 
 
 
@@ -131,7 +131,7 @@ nav>ul>li>a {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   text-decoration: none;
-  color: rgb(194, 194, 194);
+  color: rgb(188, 188, 188);
   height: 100%;
   margin-bottom: 50px;
   text-transform: uppercase;
@@ -173,6 +173,10 @@ nav>ul>li>a:hover {
 
 /* SUB MENU */
 nav ul li ul {
+ display: flex;
+ justify-content: center;
+ height: 90px;
+ 
 
   list-style: none;
   width: 200px;
@@ -184,15 +188,21 @@ nav ul li ul {
   animation-name: dropdown1;
   position: absolute;
   margin-top: -48px;
-  top: 90px;
+  padding-bottom: 150px;
+  top: 80px;
   left: -5px;
   padding: 14px 0px;
   visibility: hidden;
   opacity: 0;
   box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0, 5);
+
+
   transition: all 0.3s;
+  
 
 }
+
+
 
 
 
@@ -276,7 +286,7 @@ nav>ul>li>a{
   display: inline;
 
 }
-nav>ul>li>a::after {
+.animation_Bars::after {
  
   position: relative;
   top: 2px;
@@ -289,12 +299,27 @@ nav>ul>li>a::after {
   background-color: rgba(255, 255, 255, 0.993);
   transition: width 0.3s ;
 }
-nav>ul>li>a:hover::after{
+.animation_Bars:hover::after{
   width: 100%;
 
 }
 
-/*--------- MEDIA SCREEN ---------*/
+nav ul li ul:hover .animation_Bars::after{
+  width: 100%;
+
+}
+
+nav > ul > li:hover .animation_Bars::after  {
+  transition: width 0.3s ;
+  width: 100%;
+  
+}
+
+
+
+
+
+/*------------------------- MEDIA SCREEN -------------------------*/
 
 
 @media screen and (max-width: 720px) {
@@ -339,6 +364,10 @@ nav>ul>li>a:hover::after{
 
   nav ul li ul {
     left: 90px;
+  }
+
+  nav>ul>li>a{
+    margin-bottom: 5px;
   }
 
   nav>ul>li:hover ul {
@@ -474,10 +503,12 @@ nav>ul>li>a:hover::after{
 
 
   nav>ul>li>ul {
+   display: none;
+   display: flex;
+   justify-content: center;
 
-    display: none;
     list-style: none;
-
+    height: 70px;
     width: 200px;
     display: flex;
     justify-content: center;
@@ -499,6 +530,7 @@ nav>ul>li>a:hover::after{
 
 
   }
+
 
   nav ul li ul li a {
 
@@ -664,7 +696,8 @@ nav>ul>li>a:hover::after{
 
 
 }
-/* ------------------------Fin elementos responsivos-------------------------- */
+/* ------------------------END  SubMenu SCREEN MEDIA-------------------------- */
+
 
 /* -----------------------------CONTAINER SECTION----------------------------- */
 .container_section{
