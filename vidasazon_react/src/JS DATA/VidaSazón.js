@@ -5,7 +5,7 @@ function App() {
     const handleResize = (() => {
       handleMenuEvents();
       if
-    })
+    });;
 
 //------------------------------ Dropdown menu ------------------------------
 document.addEventListener('DOMContentLoaded', function () {
