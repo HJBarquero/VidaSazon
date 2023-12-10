@@ -1,118 +1,76 @@
-
-//------------------------------ Functions Dropdown menu/Mobile ------------------------------
-  
-
-   //Add event 'resize'
-   window.addEventListener('resize', function () {
+import React, { useEffect } from 'react';
+function App() {
+  useEffect(() => {
     handleMenuEvents();
-    handleMenuEventsMobile();
-  });
-  
-  //Execute funtcion while the page is reloaded
-  window.addEventListener('DOMContentLoaded', function () {
-    handleMenuEvents();
-    handleMenuEventsMobile();
-  });
-
+    const handleResize = (() => {
+      handleMenuEvents();
+      if
+    })
 
 //------------------------------ Dropdown menu ------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  handleMenuEvents();
+});
+window.addEventListener('resize', function () { // If page's resolution change...
+  handleMenuEvents();
+  if (window.innerWidth < 720) {
+    MobileEvents();
+  } else {
+    console.log('WORKS DELETE EVENT');
+    const ayudaBtn = document.getElementById('ayuda_btn');
+    ayudaBtn.removeEventListener('click', ayudaEvent);
+    const contactoBtn = document.getElementById('contacto_btn');
+    contactoBtn.removeEventListener('click', contactoEvent);
+  }
+});
 function handleMenuEvents() {
   if (window.innerWidth > 720) {
-    
-    
     const menuLinks = document.querySelectorAll('nav ul li a');
-    const menuLinksAfter = document.querySelectorAll('nav> ul > li > a::after');
-
     menuLinks.forEach((menuLink) => {
       const subMenu = menuLink.parentElement.querySelector('ul');
-      const barsElement = document.querySelector('.animation_Bars::after');
-
-      //Visible
-      menuLink.addEventListener('mouseenter', function () {
+      menuLink.addEventListener('mouseenter', function () {  //Visible
         subMenu.style.visibility = 'visible';
         subMenu.style.opacity = 1;
-        menuLink.style.color = 'rgb(255, 255, 255)';
-        
-      });
-
-      //Hidden
-      menuLink.addEventListener('mouseleave', function () {
-        subMenu.style.visibility = 'hidden';
-        subMenu.style.opacity = 0;
-        menuLink.style.color = 'rgb(188, 188, 188)';
-
-        //Visible subMenu :Hover
-        subMenu.addEventListener('mouseenter', function () {
+        menuLink.style.color = 'white';
+        subMenu.addEventListener('mouseenter', function () { //Visible subMenu :Hover
           subMenu.style.visibility = 'visible';
           subMenu.style.opacity = 1;
           menuLink.style.color = 'rgb(255, 255, 255)';
         });
-
-        //Hidden subMenu :Hover
-        subMenu.addEventListener('mouseleave', function () {
+      });
+      menuLink.addEventListener('mouseleave', function () {  //Hidden
+        subMenu.style.visibility = 'hidden';
+        subMenu.style.opacity = 0;
+        menuLink.style.color = 'rgb(188, 188, 188)';
+        subMenu.addEventListener('mouseleave', function () {  //Hidden subMenu :Hover
           subMenu.style.visibility = 'hidden';
           subMenu.style.opacity = 0;
           menuLink.style.color = 'rgb(188, 188, 188)';
         });
       });
     });
-    
-  } else {
-
   }
 }
-
-
-  //------------------------------Dropdown menu MOBILE------------------------------ 
-
-function handleMenuEventsMobile() {
-
-    if (window.innerWidth < 720) {
-      var menu = document.querySelectorAll('.menu_toggle');
-      
-
-      menu.forEach(function (item) {
-        item.addEventListener('click', function (i) {
-          var elemento = i.target.parentNode;
-          console.log(elemento.children);
-          elemento.children[2].classList.toggle('activo');
-          
-         
-
-      
-        });
-      
-      });
-  
-    } else {
-     
-    }
-  }
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//------------------------------Dropdown menu MOBILE------------------------------ 
+function MobileEvents() {
+  const ayudaBtn = document.getElementById('ayuda_btn');
+  ayudaBtn.addEventListener('click', ayudaEvent);
+  const contactoBtn = document.getElementById('contacto_btn');
+  contactoBtn.addEventListener('click', contactoEvent);
+}
+function ayudaEvent() {
+  window.location.href = "Nuevoindex.html";
+}
+function contactoEvent() {
+  window.location.href = "CONTACTO.html";
+}
+if (window.innerWidth < 720) {
+  MobileEvents();
+}
 //------------------------------ Effect Carousel ------------------------------}
-
-
 let checkboxRight = document.getElementById('check_slide');
 let checkboxLeft = document.getElementById('check_slide_left')
 let sliderButton = document.querySelector('.slider_animation_button');
-
-
 // num clicks follow-up
 let clics = 0;
 console.log(`Clicks: ${clics}`)

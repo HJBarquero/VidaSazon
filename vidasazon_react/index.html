@@ -8,10 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content=" VidaSazón es un restaurante de comida natural, con platillos deliciosos preparados por profesionales dispuestos a la merced del cliente, servimos casados, gallo pinto, soaps, picadillos, pastas, comida rápida, y distintos platillos. ">
-  <link rel="stylesheet" type="text/css" href="CSS\Styles.css">
+  <link rel="stylesheet" type="text/css" href="/src\CSS\Styles.css">
   <link rel="icon" type="image/png" href="imgs\Icono Vz.png">
-  <!-- FONTs  !-->
-
+  <!-- FONTs!-->
   <script src="https://kit.fontawesome.com/fb3add99c5.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,81 +20,60 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
+  <!--Main React-->
+
+
 
 </head>
 
 <body>
   <header>
-
-
     <div class="container_menu">
-
       <div class="menu">
-
         <input type="checkbox" id="check_menu" id="check_icon">
         <Label id="label_check" for="check_menu" id="check_icon">
           <i class="fa-solid fa-bars " id="icon_bars_show"></i>
           <i class="fa-solid fa-x icon_bars_show-out" id="icon_bars_show-out"></i>
-
         </Label>
         <nav>
-          <h1> <a  href="2-index.html">VidaSazón </a></h1>
+          <h1> <a href="index.html">VidaSazón</a></h1>
           <ul class="menu">
-            <li class=""><a class="animation_Bars" href="2-index.html" id="selected">Inicio</a>
-            <li class=><a class="animation_Bars" href="#" >Menú</a>
-
+            <li class=""><a class="animation_Bars" href="index.html" id="selected">Inicio</a>
+            <li class=''><a class="animation_Bars" href="#">Menú</a>
             </li>
-
-              <!-- Nav Sub Menu-->
-
-            <li class="  menu_toggle tgl_white"> <a class="cursor animation_Bars" href="#">Ayuda</a><i
-                class="fa-solid fa-chevron-down icon-arrow-li"></i>
+            <!-- Nav Sub Menu-->
+            <li class=" menu_toggle tgl_white" id="ayuda_btn"> <a class="cursor animation_Bars">Ayuda</a>
               <ul class="menu-list ">
                 <li><a class="Sub-Menú " href="Nuevoindex.html">Buscar Información sobre
                     VidaSazón</a></li>
               </ul>
             </li>
-         
-
-            <li class=" menu_toggle tgl_white"><a href="#" class="cursor animation_Bars ">Contacto</a><i
-                class="fa-solid fa-chevron-down icon-arrow-li"></i>
+            <li class=" menu_toggle tgl_white" id="contacto_btn"><a class="cursor animation_Bars ">Contacto</a>
               <ul class="menu-list marg_left ">
-                <li><a class="Sub-Menú  " href="CONTACTO.html">Solicitar los servicios de contacto de VidaSazón</a></li>
+                <li><a class="Sub-Menú" href="CONTACTO.html">Solicitar los servicios de contacto de VidaSazón</a></li>
               </ul>
             </li>
-
-
           </ul>
-
         </nav>
       </div>
     </div>
-
-
-
-
   </header>
 
   <section>
+    <div id="root"></div>
     <div class="container_section ">
-
 
       <div class="Carousel ">
         <!-- Slide Button RIGHT-->
-
-
         <input type="checkbox" id="check_slide">
         <label for="check_slide" id="slider_button">
-
           <div class="slider_icon_box_right">
             <div class="slider_icon">
               <i class="fa-solid fa-angle-right slider_font_icon "></i>
             </div>
           </div>
         </label>
-
         <!-- Slide Button LEFT-->
-
         <input type="checkbox" id="check_slide_left">
         <label for="check_slide_left" id="slider_button_left">
 
@@ -105,13 +83,15 @@
             </div>
           </div>
         </label>
-
- 
-
-
         <ul class="slider_animation_button">
           <li>
-            <img src="imgs\pinto.png" alt="">
+            <img src="/src\imgs\pinto.png" alt="">
+            <div class="container_section_text">
+              <h1>VidaSazón a la carta </h1>
+            </div>
+          </li>
+          <li>
+            <img src="\src\imgs\papas.png" alt="">
             <div class="container_section_text">
               <h1>VidaSazón a la carta </h1>
             </div>
@@ -119,15 +99,7 @@
           </li>
 
           <li>
-            <img src="imgs\papas.png" alt="">
-            <div class="container_section_text">
-              <h1>VidaSazón a la carta </h1>
-            </div>
-
-          </li>
-
-          <li>
-            <img src="imgs\frijoles-rojos-laicos-planos-arroz-recipiente.jpg" alt="">
+            <img src="\src\imgs\frijoles.jpg" alt="">
             <div class="container_section_text">
               <h1>VidaSazón a la carta </h1>
             </div>
@@ -152,11 +124,11 @@
 
   </section>
 
-  <script src="JS\VidaSazón.js">
+  <script src="src\JS DATA\VidaSazón.js">
   </script>
+  <script type="module" src="src/main.jsx"></script>
 
 
- 
 
 </body>
 
