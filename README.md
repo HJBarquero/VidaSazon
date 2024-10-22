@@ -61,7 +61,7 @@ cd vidasazon_react".
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-##Contact
+## Contact
 
 ```
 GitHub: https://github.com/HJBarquero
